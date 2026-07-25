@@ -1,4 +1,4 @@
-Package algorithm;
+package algorithm;
 
 import datastructure.Node;
 import java.util.ArrayList;
