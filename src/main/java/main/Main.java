@@ -11,7 +11,8 @@ public class Main extends Application {
 
         TrustLinkUI ui = new TrustLinkUI();
 
-        //ui.show(stage);
+        ui.show(stage);
+
     }
 
     public static void main(String[] args) {
@@ -19,4 +20,5 @@ public class Main extends Application {
         launch(args);
 
     }
+
 }
