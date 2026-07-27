@@ -1,4 +1,0 @@
---patch-module
-com.trustlink.trust.link.application=_
---add-reads
-com.trustlink.trust.link.application=ALL-UNNAMED
