@@ -132,6 +132,14 @@ public class TrustLinkUI {
             String status
                     = calculator.getStatus(score);
 
+            String trustLevel = calculator.getTrustLevel(score);
+
+            String explanation = calculator.generateExplanation(value);
+
+            String scamType = calculator.getScamType(score);
+
+            String recommendation = calculator.getRecommendation(score);
+
             riskBar.setProgress(score / 100.0);
 
             if (score >= 80) {
@@ -167,14 +175,28 @@ public class TrustLinkUI {
             }
 
             result.setText(
-                    "Analyzing: "
-                    + value
-                    + "\n\nTrust Score: "
-                    + score
-                    + "/100"
-                    + "\n\nStatus: "
+                    "━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    + "Analyzing : " + value
+                    + "\n\nTrust Score : "
+                    + score + "/100"
+                    + "\n"
+                    + trustLevel
+                    + "\n\nStatus : "
                     + status
-                    + "\n\nRisk Factors:"
+                    + "\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                    + "\nAI Explainability"
+                    + "\n"
+                    + explanation
+                    + "\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                    + "\nPossible Scam"
+                    + "\n"
+                    + scamType
+                    + "\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                    + "\nRecommendation"
+                    + "\n"
+                    + recommendation
+                    + "\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+                    + "\nDetected Risk Factors:"
                     + riskFactors
             );
 
