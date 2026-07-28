@@ -140,6 +140,11 @@ public class TrustLinkUI {
 
             String recommendation = calculator.getRecommendation(score);
 
+            int confidence = calculator.getConfidence(risks);
+
+            String confidenceText
+                    = calculator.getConfidenceText(confidence);
+
             riskBar.setProgress(score / 100.0);
 
             if (score >= 80) {
@@ -198,6 +203,11 @@ public class TrustLinkUI {
                     + "\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
                     + "\nDetected Risk Factors:"
                     + riskFactors
+                    + "\n━━━━━━━━━━━━━━━━━━━━"
+                    + "\nAI Confidence"
+                    + "\n"
+                    + confidence + "%"
+                    + " (" + confidenceText + ")"
             );
 
             // Save Scan into MySQL
