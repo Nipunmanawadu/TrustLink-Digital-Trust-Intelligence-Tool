@@ -141,4 +141,38 @@ public class TrustScore {
         return "No immediate threat detected.";
     }
 
+    public int getConfidence(ArrayList<Risk> risks) {
+
+        if (risks.isEmpty()) {
+            return 20;
+        }
+
+        if (risks.size() == 1) {
+            return 60;
+        }
+
+        if (risks.size() == 2) {
+            return 85;
+        }
+
+        return 98;
+    }
+
+    public String getConfidenceText(int confidence) {
+
+        if (confidence >= 90) {
+            return "Very High Confidence";
+        }
+
+        if (confidence >= 70) {
+            return "High Confidence";
+        }
+
+        if (confidence >= 50) {
+            return "Medium Confidence";
+        }
+
+        return "Low Confidence";
+    }
+
 }
